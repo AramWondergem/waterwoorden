@@ -120,16 +120,16 @@ a:not([class]) {
   --padding-large: 1.5em;
   --padding-XXXL: 5em;
 
-  --color-primary: hsl(319, 65%, 55%);
+  --color-primary: hsla(217, 14%, 32%, 1);
   --color-white: hsl(0, 0%, 100%);
-  --color-dark: hsl(0, 0%, 0%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-dark: hsla(217, 14%, 21%, 1);
+  --color-light: hsla(0, 0%, 61%, 1);
 
-  /*--background-body: var(--color-light-1);*/
-  /*--background-button: var(--color-secondary);*/
-  /*--background-button-active: var(--color-secondary-light);*/
+  --background-body: var(--color-white);
+
 
   --basic-screen-width: 1200px;
-  --gap: 20px;
   --margin-innerbox: 20px;
 
 }
