@@ -1,7 +1,4 @@
-/* ------------------import fonts-----------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 /*--------------------CSS Reset-----------------------------*/
 
 /*
@@ -26,7 +23,7 @@
   3. Allow percentage-based heights in the application
 */
 html, body {
-  height: 100%;
+  height: 100vh;
 }
 
 /*
@@ -95,10 +92,11 @@ a:not([class]) {
 
 
 /*--------------custom properties----------------- */
-#root {
 
-  --font-headings: 'Roboto', sans-serif;
-  --font-body: 'Roboto', sans-serif;
+:root {
+
+  --font-headings: 'REM','Roboto','Arial', sans-serif;
+  --font-body: 'REM','Roboto','Arial', sans-serif;
 
   --font-weight-300: 300;
   --font-weight-400: 400;
@@ -132,7 +130,6 @@ a:not([class]) {
 
   --basic-screen-width: 1200px;
   --gap: 20px;
-  --tile-width: 300px;
   --margin-innerbox: 20px;
 
 }
@@ -144,30 +141,18 @@ a:not([class]) {
   display: flex;
   justify-content: center;
   align-items: stretch;
+  flex: 1 0
 
 }
 
 .innerbox {
   flex: 0 1 var(--basic-screen-width);
   margin: 0 var(--margin-innerbox);
-}
-
-.flex-collumn {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
 }
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.flex-wrap-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: var(--gap)
-}
 
 
 /*------------------Fonts-----------------*/
@@ -175,7 +160,7 @@ a:not([class]) {
 body, p, button, textarea, input, label {
   font-family: var(--font-body);
   font-weight: var(--font-weight-400);
-  font-size: var(--fontsize-400);
+  font-size: var(--fontsize-500);
   color: var(--color-dark);
 }
 
