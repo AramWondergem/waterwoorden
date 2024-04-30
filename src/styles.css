@@ -129,7 +129,7 @@ a:not([class]) {
   --background-body: var(--color-white);
 
 
-  --basic-screen-width: 1200px;
+  --basic-screen-width: 600px;
   --margin-innerbox: 20px;
 
 }

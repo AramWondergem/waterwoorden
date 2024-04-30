@@ -1,7 +1,15 @@
 <div class="outerbox">
   <div class="innerbox">
-    <p>list-page works!</p>
-    <h1>list-page works!</h1>
-    <div class="list--innerbox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus ad aliquam at autem cupiditate dignissimos doloremque ea eligendi error excepturi exercitationem fuga harum impedit in iste labore minima minus nostrum nulla porro, possimus quod repellat reprehenderit saepe sapiente veritatis voluptatum! Beatae consectetur dignissimos facilis fuga fugit illo laudantium minima sit voluptates! Explicabo iste sequi similique! Aliquam cupiditate dolores ducimus earum id illum ipsa itaque labore laboriosam nostrum quaerat quibusdam recusandae saepe, suscipit ut? Alias, aut culpa, earum eos esse libero numquam perferendis recusandae reiciendis reprehenderit repudiandae sequi sit sunt tenetur voluptas? A asperiores atque autem consectetur debitis deleniti doloribus est, facilis id in incidunt iusto necessitatibus nemo obcaecati omnis optio quae quaerat quis quo quod sit tenetur voluptas. Ad blanditiis deleniti eum, harum, hic ipsam minima necessitatibus perspiciatis placeat qui quos repellendus sapiente sunt velit vitae voluptas voluptate? Neque nobis quia reprehenderit tempore veniam? A ab adipisci atque aut consectetur consequatur cum delectus deleniti dolore, dolorem dolores earum esse expedita facere fugit id impedit ipsa ipsum laudantium libero magni molestiae molestias mollitia nisi nobis odit officia officiis possimus quasi qui, quidem rerum saepe sapiente similique unde ut voluptas. Ab aliquam architecto asperiores aut consequuntur culpa dignissimos enim facere impedit, incidunt ipsum itaque iure magnam minus necessitatibus nostrum numquam odio odit officia optio perferendis porro quidem repellendus sit suscipit tempora vel voluptate. Architecto commodi corporis dolores natus odio, placeat qui tempore. Amet beatae consectetur excepturi libero quo repellendus temporibus ullam veritatis! Consequuntur corporis ducimus fugit numquam odio quas quia sequi tempore vero voluptatum. A accusantium alias aliquam animi, deleniti dolore doloribus ducimus eveniet explicabo hic impedit ipsa iste iusto, labore laborum magni minima modi molestias nisi numquam omnis perspiciatis placeat quae quasi qui quidem quis repudiandae saepe sed sit vel veniam, vitae voluptas! Accusantium ea numquam perspiciatis sapiente voluptate. Delectus facere molestias nobis quis totam. A accusamus aliquam aliquid asperiores blanditiis consequatur corporis culpa cupiditate deserunt distinctio, dolore, dolorem eligendi est exercitationem expedita fuga in magnam minus natus nostrum provident quasi rem sed sit tenetur. Ab adipisci aliquam, autem hic iste iusto laborum minima nam numquam pariatur perspiciatis quam repellendus saepe sequi sit tempore voluptatibus voluptatum! A dicta dolorem dolores est et fuga inventore ipsum iste iure labore minus mollitia necessitatibus nesciunt obcaecati odio, officia quos ratione recusandae reiciendis reprehenderit tempora vel veniam veritatis voluptas voluptatibus? Deserunt doloribus fugiat odio quasi qui reiciendis. Alias, commodi est incidunt quam sit tempore.</div>
-  </div>
-</div>
+    <input type="text" name="search" id="search" placeholder="Zoek een woord" [(ngModel)]="searchTerm" (keyup)="onKeyUp()">
+    <div class="list--wrapper" *ngIf="filteredWaterwords.length>0; else noWordsFound">
+    <div  *ngFor="let waterword of filteredWaterwords" class="list--list-item">
+      <span class="list--word">{{this.service.capitalizeFirstLetter(waterword[0])}}</span>
+
+      <p ><span *ngIf="waterword[1]" class="list--synonym">{{waterword[1]}} - </span><span class="list--definition">{{waterword[2]}}</span></p>
+
+    </div>
+    </div>
+    <ng-template #noWordsFound>
+      <h2>No words found</h2>
+    </ng-template>
+
