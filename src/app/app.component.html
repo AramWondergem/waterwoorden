@@ -1,2 +1,12 @@
 <app-header/>
 <router-outlet />
+<div class="menu outerbox" [ngClass]="{'showMenu': menuToggle }">
+  <div class="innerbox">
+  <li>Home</li>
+  <li>Profile</li>
+  </div>
+</div>
+<div class="hamburger" (click)="toggleMenu()">
+  <span [ngClass]="{'closeIcon': menuToggle }" class="material-symbols-outlined">menu</span>
+  <span [ngClass]="{'closeIcon': !menuToggle }" class="material-symbols-outlined">close</span>
+</div>

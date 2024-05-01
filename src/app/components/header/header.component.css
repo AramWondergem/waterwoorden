@@ -16,13 +16,5 @@
   color: var(--color-white);
 }
 
-.hamburger {
-  position: fixed;
-  z-index: 100;
-  top: 15px;
-  right: var(--margin-innerbox);
-  padding: 4px;
-  cursor: pointer;
-  font-size: 2rem;
-  color: var(--color-white);
-}
+
+
