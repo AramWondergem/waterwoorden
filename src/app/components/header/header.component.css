@@ -7,14 +7,24 @@
 }
 
 .header--innerbox {
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 
 }
 
 .header--title{
-  color: var(--color-white);
+  color: var(--color-white) ;
 }
 
+@media screen and (max-width: 760px) {
+  .show {
+    display: none;
+  }
+  .header--innerbox {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 
 

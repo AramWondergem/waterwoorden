@@ -1,9 +1,8 @@
 <app-header/>
 <router-outlet />
 <div class="menu outerbox" [ngClass]="{'showMenu': menuToggle }">
-  <div class="innerbox">
-  <li>Home</li>
-  <li>Profile</li>
+  <div class="innerbox innerbox-nav">
+  <app-nav-links (action)="onNavClick()" [isFlexColumn]="true"/>
   </div>
 </div>
 <div class="hamburger" (click)="toggleMenu()">

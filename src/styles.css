@@ -134,6 +134,8 @@ a:not([class]) {
   --basic-screen-width: 600px;
   --margin-innerbox: 20px;
 
+  --breakpoint-sm: 760px;
+
 }
 
 
