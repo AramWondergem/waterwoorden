@@ -1,0 +1,28 @@
+:host {
+  flex: 0 0 70px;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-primary);
+
+}
+
+.header--innerbox {
+  justify-content: center;
+  align-items: center;
+
+}
+
+.header--title{
+  color: var(--color-white);
+}
+
+.hamburger {
+  position: fixed;
+  z-index: 100;
+  top: 15px;
+  right: var(--margin-innerbox);
+  padding: 4px;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--color-white);
+}
