@@ -27,4 +27,10 @@
   }
 }
 
+@media screen and (max-width: 375px) {
+  h2 {
+    font-size: var(--fontsize-600);
+  }
+}
+
 

@@ -23,7 +23,7 @@ export class ListPageComponent {
   constructor(service: ServiceService,
               private renderer: Renderer2) {
     this.service = service;
-    this.service.getFiles(['assets/waternamen03_L_natuurlijk.csv', 'assets/waternamen03_R_mensgemaakt.csv']).subscribe(data => {
+    this.service.getWaterWordsList().subscribe(data => {
       console.log(data);
       this.waterWordsList = data;
       this.filteredWaterwords = data;
@@ -63,6 +63,11 @@ export class ListPageComponent {
 
   scrollToTop() {
     this.renderer.setProperty(this.scrollContainer.nativeElement, 'scrollTop', 0);
+  }
+
+  clearInput(inputField: HTMLInputElement): void {
+    this.searchTerm = '';
+    inputField.focus(); // Optionally, focus the input field after clearing
   }
 
 }
