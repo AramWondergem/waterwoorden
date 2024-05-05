@@ -68,6 +68,7 @@ export class ListPageComponent {
   clearInput(inputField: HTMLInputElement): void {
     this.searchTerm = '';
     inputField.focus(); // Optionally, focus the input field after clearing
+    this.searchTermStream.next(this.searchTerm);
   }
 
 }
