@@ -3,3 +3,52 @@
   display: flex;
   flex-direction: column;
 }
+
+
+.hamburger {
+  position: fixed;
+  z-index: 100;
+  top: 15px;
+  right: var(--margin-innerbox);
+  padding: 4px;
+
+  color: var(--color-white);
+}
+.hamburger span {
+  font-size: 2rem;
+}
+
+.closeIcon {
+  display: none;
+}
+
+.menu {
+  position: fixed;
+  transform: translateX(200%);
+  transition: transform 0.2s;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: var(--color-primary-transparant);
+  color: white;
+  list-style: none;
+}
+
+.showMenu {
+  transform: translateX(0);
+}
+
+.innerbox-nav {
+  padding: 30px;
+}
+
+
+@media screen and (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+

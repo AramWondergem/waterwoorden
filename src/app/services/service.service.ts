@@ -9,7 +9,23 @@ import {forkJoin, map, Observable} from "rxjs";
   providedIn: 'root'})
 export class ServiceService {
 
-  constructor(private http: HttpClient) { }
+  private waterWordsList: string[][] = [];
+
+  constructor(private http: HttpClient) {}
+
+  getWaterWordsList(): Observable<any> {
+
+    if(this.waterWordsList.length > 0) {
+      return new Observable(observer => {
+        observer.next(this.waterWordsList);
+        observer.complete();
+      });
+    } else {
+      return this.getFiles(['assets/waternamen03_L_natuurlijk.csv', 'assets/waternamen03_R_mensgemaakt.csv']).pipe(map(data => this.waterWordsList = data));
+
+    }
+  }
+
 
   getFiles(filePaths: string[]): Observable<any> {
     const fileObservables: Observable<string[][]>[] = filePaths.map(filePath =>

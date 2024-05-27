@@ -1,0 +1,37 @@
+
+a {
+  color: var(--color-white)!important;
+  cursor: pointer !important;
+}
+.nav-link.active{
+  background-color: var(--color-light);
+}
+
+.nav-pills {
+  list-style-type:none;
+}
+
+.nav-link {
+  all:unset;
+  text-underline: none;
+  padding: 10px;
+  border-radius: 15px;
+}
+.nav-pills {
+  display: flex;
+  flex-direction: row;
+  gap:20px
+}
+
+.flex-collumn {
+  flex-direction: column;
+}
+
+.li {
+  display: block;
+}
+
+
+
+
+
