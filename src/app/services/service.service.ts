@@ -16,13 +16,11 @@ export class ServiceService {
   getWaterWordsList(): Observable<any> {
 
     if(this.waterWordsList.length > 0) {
-      console.log('returning cached data')
       return new Observable(observer => {
         observer.next(this.waterWordsList);
         observer.complete();
       });
     } else {
-      console.log('fetching data')
       return this.getFiles(['assets/waternamen03_L_natuurlijk.csv', 'assets/waternamen03_R_mensgemaakt.csv']).pipe(map(data => this.waterWordsList = data));
 
     }

@@ -24,7 +24,6 @@ export class ListPageComponent {
               private renderer: Renderer2) {
     this.service = service;
     this.service.getWaterWordsList().subscribe(data => {
-      console.log(data);
       this.waterWordsList = data;
       this.filteredWaterwords = data;
     });
@@ -54,7 +53,6 @@ export class ListPageComponent {
     this.filteredWaterwords = this.waterWordsList.filter(
       waterWordObject => waterWordObject[0]?.toLowerCase().includes(text.toLowerCase())
     );
-    console.log(this.filteredWaterwords);
   }
 
   onKeyUp() {
