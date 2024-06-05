@@ -2,7 +2,6 @@
   flex: 1 0;
   display: flex;
   flex-direction: column;
-  padding: var(--margin-innerbox) 0;
 
 }
 
@@ -15,6 +14,8 @@
   overflow-y: scroll;
   overflow-x: hidden;
   gap: 20px;
+  padding: var(--margin-innerbox);
+
 
 }
 
