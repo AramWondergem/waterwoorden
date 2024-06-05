@@ -1,11 +1,11 @@
 <div class="outerbox">
-  <div class="innerbox" *ngIf="waterWordsList.length > 0">
+  <div class="innerbox list--innerbox" *ngIf="waterWordsList.length > 0">
     <div class="input-container">
       <input type="text" name="search" id="search" placeholder="Zoek een woord" [(ngModel)]="searchTerm"
              (keyup)="onKeyUp()" #inputField>
       <span class="close-button material-symbols-outlined" (click)="clearInput(inputField)">close</span>
     </div>
-    <div #scrollContainer class="list--wrapper" *ngIf="filteredWaterwords.length>0 ; else noWordsFound">
+    <div #scrollContainer class="list--wrapper scrollbar-hidden" *ngIf="filteredWaterwords.length>0 ; else noWordsFound">
       <div *ngFor="let waterword of filteredWaterwords" class="list--list-item">
         <span class="list--word">{{this.service.capitalizeFirstLetter(waterword[0])}}</span>
 
