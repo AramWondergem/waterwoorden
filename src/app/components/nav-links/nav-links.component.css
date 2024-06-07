@@ -16,7 +16,13 @@ a {
   text-underline: none;
   padding: 10px;
   border-radius: 15px;
+  color: var(--color-white)
 }
+
+.active-nav-link {
+  background: var(--color-light);
+}
+
 .nav-pills {
   display: flex;
   flex-direction: row;

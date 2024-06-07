@@ -1,11 +1,11 @@
 <nav class="navlinks">
   <ul class="nav nav-pills" [ngClass]="{'flex-collumn': isFlexColumn }">
     <li class="nav-item">
-      <a  routerLink="list" routerLinkActive="active" class="nav-link" aria-current="page" (click)="onClick()">Woordenlijst</a>
+      <button [ngClass]="{'active-nav-link': this.toggle }" class="nav-link" (click)="onClick()" [disabled]="this.toggle">Woordenlijst</button>
     </li>
     <li class="nav-item ">
-      <a  routerLink="info" routerLinkActive="active" class="nav-link"
-          aria-current="page" (click)="onClick()">About</a>
+      <button class="nav-link" [ngClass]="{'active-nav-link': !this.toggle }"
+              [disabled]="!this.toggle" (click)="onClick()">About</button>
     </li>
   </ul>
 </nav>
