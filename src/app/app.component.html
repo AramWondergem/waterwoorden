@@ -1,5 +1,4 @@
 <app-header/>
-<router-outlet />
 <div class="menu outerbox" [ngClass]="{'showMenu': menuToggle }">
   <div class="innerbox innerbox-nav">
   <app-nav-links (action)="onNavClick()" [isFlexColumn]="true"/>
@@ -9,3 +8,6 @@
   <span [ngClass]="{'closeIcon': menuToggle }" class="material-symbols-outlined">menu</span>
   <span [ngClass]="{'closeIcon': !menuToggle }" class="material-symbols-outlined">close</span>
 </div>
+<app-list-page *ngIf="toggleComponent"/>
+<app-info-page *ngIf="!toggleComponent"/>
+
