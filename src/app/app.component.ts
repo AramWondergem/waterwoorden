@@ -23,16 +23,15 @@ export class AppComponent {
   constructor(
     private dataService: DataSharingService
   ) {
-    this.dataService.toggleNavLinks$.subscribe((value: boolean)  => this.toggleComponent = value)
+    this.dataService.toggleNavLinks$.subscribe((value: boolean)  => this.toggleComponent = value);
+    this.dataService.toggleMenu$.subscribe((value: boolean) => this.menuToggle = value);
   }
 
 
   toggleMenu() {
-    this.menuToggle = !this.menuToggle;
+    this.dataService.toggleMenu();
   }
-  onNavClick() {
-    this.toggleMenu()
-  }
+
 
 
 }

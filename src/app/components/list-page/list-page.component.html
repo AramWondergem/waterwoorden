@@ -17,7 +17,7 @@
     <ng-template #noWordsFound>
       <div class="list--wrapper">
         <div class="list--list-item">
-          <p class="list--definition">Geen woorden gevonden gelijk aan "{{this.searchTerm}}"</p>
+          <p class="list--definition" *ngIf="!isLoading">{{this.searchTerm.length == 1 ? "Er zijn geen woorden die beginnen met een \"" + this.searchTerm + "\"": "Geen woorden gevonden gelijk aan \"" + this.searchTerm + "\""}}</p>
         </div>
       </div>
     </ng-template>

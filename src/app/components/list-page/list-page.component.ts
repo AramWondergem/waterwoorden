@@ -19,6 +19,7 @@ export class ListPageComponent {
   searchTerm: string = '';
   private searchTermStream = new Subject<string>();
   service: ServiceService;
+  isLoading: boolean = true;
 
   constructor(service: ServiceService,
               private renderer: Renderer2) {
@@ -26,6 +27,7 @@ export class ListPageComponent {
     this.service.getWaterWordsList().subscribe(data => {
       this.waterWordsList = data;
       this.filteredWaterwords = data;
+      this.isLoading = false;
     });
 
     this.searchTermStream.pipe(
@@ -40,6 +42,7 @@ export class ListPageComponent {
 
     if (!text) {
       this.filteredWaterwords = this.waterWordsList;
+      this.isLoading = false;
       return;
     }
 
@@ -47,15 +50,19 @@ export class ListPageComponent {
       this.filteredWaterwords = this.waterWordsList.filter(
         waterWordObject => waterWordObject[0]?.toLowerCase().startsWith(text.toLowerCase())
       );
+
+      this.isLoading = false;
       return;
     }
 
     this.filteredWaterwords = this.waterWordsList.filter(
       waterWordObject => waterWordObject[0]?.toLowerCase().includes(text.toLowerCase())
     );
+    this.isLoading = false;
   }
 
   onKeyUp() {
+    this.isLoading = true;
     this.searchTermStream.next(this.searchTerm);
   }
 
@@ -64,6 +71,7 @@ export class ListPageComponent {
   }
 
   clearInput(inputField: HTMLInputElement): void {
+    this.isLoading = true;
     this.searchTerm = '';
     inputField.focus(); // Optionally, focus the input field after clearing
     this.searchTermStream.next(this.searchTerm);

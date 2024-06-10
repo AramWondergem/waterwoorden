@@ -1,7 +1,7 @@
 <app-header/>
 <div class="menu outerbox" [ngClass]="{'showMenu': menuToggle }">
   <div class="innerbox innerbox-nav">
-  <app-nav-links (action)="onNavClick()" [isFlexColumn]="true"/>
+  <app-nav-links [isMenu]="true"/>
   </div>
 </div>
 <div class="hamburger" (click)="toggleMenu()">
