@@ -13,18 +13,19 @@ import {DataSharingService} from "../../services/data-sharing.service";
 })
 export class NavLinksComponent {
   toggle: boolean = true;
-
-  @Output() action = new EventEmitter<void>();
-  @Input() isFlexColumn: boolean = false;
+  @Input() isMenu: boolean = false; //used to make the nav links sort in collumn instead of row and to make sure that the menu is toggled only when there is a menu.
 
   constructor(
     private dataService: DataSharingService
   ) {
-    this.dataService.toggleNavLinks$.subscribe((value: boolean)  => this.toggle = value)
+    this.dataService.toggleNavLinks$.subscribe((value: boolean)  => this.toggle = value);
   }
 
   onClick() {
-    this.dataService.toggleNavLinks()
+    this.dataService.toggleNavLinks();
+    if(this.isMenu) {
+      this.dataService.toggleMenu();
+    }
   }
 
 }
