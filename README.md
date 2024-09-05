@@ -32,10 +32,25 @@ To run the application locally, follow these steps:
     ```bash
     npm install
     ```
-6. Start the Development Server
+    
+6. **Add two csv files to the project**:
+    add the following two files in `src/assets`
+
+    - waternamen03_R_mensgemaakt.csv
+    - waternamen03_L_natuurlijk.csv
+
+    with the following setup for the csv file
+
+    ```csv
+    word,synonyms,definition
+
+    example: 
+    rak,"gewade, gewas, ongemak, rak",ondiep voor schepen gevaarlijk water
+    ```
+8. **Start the Development Server**
     ```bash
     ng serve
     ```
 
-7. Open your browser and go to [http://localhost:4200](http://localhost:4200) to view the app.
+9. Open your browser and go to [http://localhost:4200](http://localhost:4200) to view the app.
 
