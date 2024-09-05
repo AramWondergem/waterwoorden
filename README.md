@@ -1,27 +1,41 @@
 # Waterwoorden
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
-## Development server
+## Introduction
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This [app](https://everdienbreken.org/Waterwoorden/) is part of “Een Waal van Woorden,” a work by visual artist [Everdien Breken](https://everdienbreken.org/). The project transforms words from this app into a virtual river flowing across the screen. The ‘Waal’ serves as a tribute to the long-standing relationship the Dutch have with water. You can see a short preview [here](https://www.visual-art-research.com/2020/10/waal-van-woorden/).
 
-## Code scaffolding
+## Running Locally
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+To run the application locally, follow these steps:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Install Node.js and Angular CLI**:
+   Make sure Node.js is installed on your system. You can download it from [Node.js official website](https://nodejs.org/).
+     Install Angular CLI globally using npm:
+     ```bash
+     npm install -g @angular/cli
+     ```
 
-## Running unit tests
+2. **Clone the Repository**:
+   Clone the project repository to your local machine:
+     ```bash
+     git clone <repository-url>
+     ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. **Navigate to the Project Directory**:
 
-## Running end-to-end tests
+   ```bash
+   cd <project-directory>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+5. **Install Dependencies**: Run the following command to install the required dependencies:
+    ```bash
+    npm install
+    ```
+6. Start the Development Server
+    ```bash
+    ng serve
+    ```
 
-## Further help
+7. Open your browser and go to [http://localhost:4200](http://localhost:4200) to view the app.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
